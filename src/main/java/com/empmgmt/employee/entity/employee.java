@@ -3,6 +3,7 @@ package com.empmgmt.employee.entity;
 //import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Entity;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,7 +18,9 @@ public class employee {
 	private long salary;
 	private String department;
 	
-	
+	public employee() {
+	}
+
 	public employee(int id, String name, long salary, String department) {
 		super();
 		this.id = id;

@@ -24,33 +24,35 @@ public class EmployeeController {
 	
 	List<employee> employees=new ArrayList<>();
 	
+//------------------------insert the data---------------------------//
+	
 	@PostMapping("/add")
 	public String AddEmployee(@RequestBody employee employee) {
 		System.out.println("input" + employee.toString());
 //		employees.add(employee);
 		employee saveEmployee= employeeService.saveEmployee(employee);
-		
 		return "employee inserted succesfully with id : " + saveEmployee.getId();
 		
 	}
 	
+
+//------------------------fetch the data---------------------------//
 	
 	@GetMapping
 	public List<employee> getemployees(){
-		return employees;	
+		System.out.println("inside getEmployee methode");
+//		List<employee> employeeList = employeeService.getEmployee();
+//		return employeeList;	
+		return employeeService.getEmployee(); 
 	}
 	
-	// ....get the data by using id....//
+	
+//------------------------get the data by using id---------------------------//
 	
 	@GetMapping("/{id}")
 	public employee getEmployeeById(@PathVariable int id) {
-		
-		for(employee employee: employees) {
-			if(employee.getId()==id) {
-				return employee;
-			}	
-		}
-		return null;
+		return employeeService.getEmployeeById(id);
+	
 	}
 	
 	
