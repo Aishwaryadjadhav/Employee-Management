@@ -10,6 +10,4 @@ import com.empmgmt.employee.entity.employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<employee, Integer> {
 
-	
-
 }
