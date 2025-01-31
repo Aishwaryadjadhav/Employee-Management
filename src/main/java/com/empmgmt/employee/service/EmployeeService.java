@@ -31,5 +31,20 @@ public class EmployeeService {
 				
 	}
 
+
+	public String updateEmployee(int id, employee employee) {
+		employee empFromDB = getEmployeeById(id);
+		if(empFromDB != null) {
+			empFromDB.setDepartment(employee.getDepartment());
+			empFromDB.setName(employee.getName());
+			empFromDB.setSalary(employee.getSalary());
+			saveEmployee(empFromDB);
+			return "employee updated succecfully";
+		}else {
+			return "requested employee is not present in database, please use diff ID";
+		}
+			
+	}
+
 	
 }
