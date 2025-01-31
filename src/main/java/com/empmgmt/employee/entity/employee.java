@@ -1,9 +1,6 @@
 package com.empmgmt.employee.entity;
 
-//import org.springframework.data.annotation.Id;
-
 import jakarta.persistence.Entity;
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -74,9 +71,6 @@ public class employee {
 	public String toString() {
 		return "employee [id=" + id + ", name=" + name + ", salary=" + salary + ", department=" + department + "]";
 	}
-	
-	
-	
 	
 
 }
