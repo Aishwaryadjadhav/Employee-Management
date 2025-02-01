@@ -42,8 +42,12 @@ public class EmployeeService {
 			return "employee updated succecfully";
 		}else {
 			return "requested employee is not present in database, please use diff ID";
-		}
-			
+		}		
+	}
+
+
+	public void deleteEmployee(int id) {
+		employeeRepository.deleteById(id);
 	}
 
 	
