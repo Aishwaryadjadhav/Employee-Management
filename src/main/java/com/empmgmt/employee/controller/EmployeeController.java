@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,11 +31,11 @@ public class EmployeeController {
 //------------------------insert the data---------------------------//
 	
 	@PostMapping("/add")
-	public String AddEmployee(@RequestBody employee employee) {
+	public ResponseEntity<String> AddEmployee(@RequestBody employee employee) {
 		System.out.println("input" + employee.toString());
 //		employees.add(employee);
 		employee saveEmployee= employeeService.saveEmployee(employee);
-		return "employee inserted succesfully with id : " + saveEmployee.getId();
+		return new ResponseEntity<>("employee inserted succesfully with id : " + saveEmployee.getId(),HttpStatus.CREATED);
 		
 	}
 	
@@ -68,7 +70,7 @@ public class EmployeeController {
 		employeeService.deleteEmployee(id);
 		return "employee deleted successfully";
 		
-	}
+	} 
 	
 	
 }
