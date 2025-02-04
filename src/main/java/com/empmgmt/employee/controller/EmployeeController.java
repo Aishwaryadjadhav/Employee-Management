@@ -1,7 +1,5 @@
 package com.empmgmt.employee.controller;
 
-import java.util.ArrayList;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +24,6 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 	
-	List<employee> employees=new ArrayList<>();
 	
 //------------------------insert the data---------------------------//
 	
@@ -45,7 +42,7 @@ public class EmployeeController {
 	@GetMapping
 	public List<employee> getemployees(){
 		System.out.println("inside getEmployee methode");
-//		List<employee> employeeList = employeeService.getEmployee();
+//		List<employee> employeeList = employeeService.getEmployee(); 
 //		return employeeList;	
 		return employeeService.getEmployee(); 
 	}
